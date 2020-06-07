@@ -1,0 +1,16 @@
+2020-06-07 13:36:51.4199 Info Message Template Auto Format enabled
+2020-06-07 13:36:51.4199 Info Loading assembly: NLog.Web.AspNetCore
+2020-06-07 13:36:51.4972 Info Adding target File Target[allfile]
+2020-06-07 13:36:51.4972 Info Adding target File Target[ownFile-web]
+2020-06-07 13:36:51.4972 Info Configured from an XML element in C:\Users\Andrew.Haine\source\repos\Order Buddy\Ord.Accounts\bin\Debug\netcoreapp3.1\NLog.config...
+2020-06-07 13:36:51.5216 Info Found 47 configuration items
+2020-06-07 13:36:51.5417 Info Configuration initialized.
+2020-06-07 13:36:51.5417 Info NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 4.5.11.8645. Product version: 4.5.11.
+2020-06-07 13:40:49.9960 Info Message Template Auto Format enabled
+2020-06-07 13:40:50.0062 Info Loading assembly: NLog.Web.AspNetCore
+2020-06-07 13:40:50.0684 Info Adding target File Target[allfile]
+2020-06-07 13:40:50.0684 Info Adding target File Target[ownFile-web]
+2020-06-07 13:40:50.0777 Info Configured from an XML element in C:\Users\Andrew.Haine\source\repos\Order Buddy\Ord.Accounts\bin\Debug\netcoreapp3.1\NLog.config...
+2020-06-07 13:40:50.0777 Info Found 47 configuration items
+2020-06-07 13:40:50.1045 Info Configuration initialized.
+2020-06-07 13:40:50.1045 Info NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 4.5.11.8645. Product version: 4.5.11.

@@ -1,0 +1,12 @@
+﻿@using Microsoft.AspNetCore.Identity
+@using Ord.Accounts.Models.Users
+@inject SignInManager<AccountsUser> SignInManager
+@inject UserManager<AccountsUser> UserManager
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="text-center">
+    @UserManager.GetUserName(User)
+    <p><b>My Id:</b> @ViewData["oauthid"]</p>
+</div>
