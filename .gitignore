@@ -435,10 +435,10 @@ $RECYCLE.BIN/
 !.vscode/extensions.json
 
 # The release or production folder
-./prod/
-./site/
-./release/
-./published/
-./logs/*
-./Data/Resources/
-./logs/internal-nlog.txt
+prod/*
+site/
+release/
+published/
+logs/*
+Data/Resources/
+logs/internal-nlog.txt

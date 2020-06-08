@@ -40,7 +40,8 @@ namespace Ord.Accounts.Data.Resources
                     AllowAccessTokensViaBrowser = true,
                     AllowedCorsOrigins = 
                     { 
-                        "http://localhost", 
+                        "http://localhost",
+                        "http://localhost:5000",
                         "https://accounts.orderbuddy.co.za", 
                         "https://backend.orderbuddy.co.za"
                     },
