@@ -38,7 +38,12 @@ namespace Ord.Accounts.Data.Resources
                     AccessTokenLifetime = 7776000,
                     RequireConsent = false,
                     AllowAccessTokensViaBrowser = true,
-                    AllowedCorsOrigins = { "http://localhost" },
+                    AllowedCorsOrigins = 
+                    { 
+                        "http://localhost", 
+                        "https://accounts.orderbuddy.co.za", 
+                        "https://backend.orderbuddy.co.za"
+                    },
                     AllowedScopes = { "openid", "profile", "orderbuddyapi" }
                 }
             };
