@@ -439,5 +439,5 @@ prod/
 site/
 release/
 published/
-logs/
+logs/*
 Data/Resources/

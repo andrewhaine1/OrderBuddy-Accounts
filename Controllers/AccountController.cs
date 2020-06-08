@@ -8,6 +8,7 @@ using IdentityServer4.Models;
 using System.Collections.Generic;
 using System.Net.Http;
 using Ord.Accounts.Services;
+using IdentityServer4;
 
 namespace Ord.Accounts.Controllers
 {
@@ -20,7 +21,8 @@ namespace Ord.Accounts.Controllers
         private readonly IUrlHelper _urlHelper;
         private readonly ISmsVerificationService _smsVerify;
 
-	private string _idpUrl { get { return "http://localhost:5000/connect/token"; } }
+
+    private string _idpUrl { get { return "https://localhost:44391/connect/token"; } }
 
         public AccountController(SignInManager<AccountsUser> signInManager,
             UserManager<AccountsUser> userManager,
@@ -47,7 +49,7 @@ namespace Ord.Accounts.Controllers
                 var result = await _userManager.CreateAsync(user, userLogin.Password);
                 if (result.Succeeded)
                 {
-		    var userMod = new
+		            var userMod = new
                     {
                         user.Id,
                         user.UserName,
@@ -114,7 +116,7 @@ namespace Ord.Accounts.Controllers
             {
                 var user = await _signInManager.UserManager.FindByNameAsync(userLogin.UserName);
 		
-		var userMod = new
+		        var userMod = new
                 {
                     user.Id,
                     user.UserName,
