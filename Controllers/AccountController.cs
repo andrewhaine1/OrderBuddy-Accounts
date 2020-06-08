@@ -22,7 +22,7 @@ namespace Ord.Accounts.Controllers
         private readonly ISmsVerificationService _smsVerify;
 
 
-    private string _idpUrl { get { return "https://localhost:44391/connect/token"; } }
+    private string _idpUrl { get { return "http://localhost:5000/connect/token"; } }
 
         public AccountController(SignInManager<AccountsUser> signInManager,
             UserManager<AccountsUser> userManager,
