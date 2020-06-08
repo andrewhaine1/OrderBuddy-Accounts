@@ -40,6 +40,8 @@ Generated\ Files/
 
 # MSTest test Results
 [Tt]est[Rr]esult*/
+
+# The production
 [Bb]uild[Ll]og.*
 
 # NUNIT
@@ -431,3 +433,11 @@ $RECYCLE.BIN/
 !.vscode/tasks.json
 !.vscode/launch.json
 !.vscode/extensions.json
+
+# The release or production folder
+prod/
+site/
+release/
+published/
+logs/
+Data/Resources/
