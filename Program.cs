@@ -13,7 +13,7 @@ namespace Ord.Accounts
 
         public static IWebHostBuilder CreateWebHostBuilder(string[] args) =>
             WebHost.CreateDefaultBuilder(args)
-                .UseUrls("http://localhost:5000")
+                .UseUrls("http://localhost:50000")
                 .UseStartup<Startup>()
                 .UseNLog();
     }
