@@ -15,6 +15,7 @@ using Microsoft.AspNetCore.Mvc.Routing;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using Ord.Accounts.Data.Contexts;
 using Ord.Accounts.Data.Resources;
@@ -28,14 +29,14 @@ namespace Ord.Accounts
 {
     public class Startup
     {
-        public Startup(IConfiguration configuration, IHostingEnvironment environment)
+        public Startup(IConfiguration configuration, IWebHostEnvironment environment)
         {
             Configuration = configuration;
             Environment = environment;
         }
 
         public IConfiguration Configuration { get; }
-        public IHostingEnvironment Environment { get; }
+        public IWebHostEnvironment Environment { get; }
 
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
@@ -61,14 +62,15 @@ namespace Ord.Accounts
             });
 
             services.AddDbContext<AccountsDbContext>(options =>
-        options.UseNpgsql(Configuration.GetConnectionString("Default")));
+            options.UseNpgsql(Configuration.GetConnectionString("Default")));
 
             services.AddIdentity<AccountsUser, AccountsRole>()
                 .AddEntityFrameworkStores<AccountsDbContext>()
                 .AddDefaultTokenProviders()
                 .AddTokenProvider<Ord.Accounts.Providers.PhoneNumberTokenProvider<AccountsUser>>("PhoneNumberConfirmation");
 
-            services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
+            services.AddMvc(options => options.EnableEndpointRouting = false)
+                .SetCompatibilityVersion(CompatibilityVersion.Version_3_0);
 
             services.AddSingleton<IActionContextAccessor, ActionContextAccessor>();
             services.AddScoped<IUrlHelper>(implementationFactory =>
@@ -141,7 +143,7 @@ namespace Ord.Accounts
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
-        public void Configure(IApplicationBuilder app, IHostingEnvironment env, ILoggerFactory loggerFactory)
+        public void Configure(IApplicationBuilder app, IWebHostEnvironment env, ILoggerFactory loggerFactory)
         {
             if (env.IsDevelopment())
             {
@@ -187,12 +189,12 @@ namespace Ord.Accounts
 
             app.UseCookiePolicy();
 
-            //app.UseMvc(routes =>
-            //{
-            //    routes.MapRoute(
-            //        name: "default",
-            //        template: "{controller=Home}/{action=Index}/{id?}");
-            //});
+            app.UseMvc(routes =>
+            {
+                routes.MapRoute(
+                    name: "default",
+                    template: "{controller=Home}/{action=Index}/{id?}");
+            });
         }
 
         private void InitializeDatabase(IApplicationBuilder app)
