@@ -42,6 +42,8 @@ namespace Ord.Accounts.Data.Resources
                     { 
                         "http://localhost",
                         "http://localhost:5000",
+                        "http://10.150.100.10:8100",
+                        "https://localhost:44391",
                         "https://accounts.orderbuddy.co.za", 
                         "https://backend.orderbuddy.co.za"
                     },

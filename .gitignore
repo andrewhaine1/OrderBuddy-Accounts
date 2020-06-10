@@ -441,5 +441,5 @@ release/
 published/
 logs/*
 logs/
-#Data/Resources/
+Data/Resources/
 logs/internal-nlog.txt
