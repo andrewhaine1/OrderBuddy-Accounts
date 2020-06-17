@@ -443,3 +443,5 @@ logs/*
 logs/
 Data/Resources/
 logs/internal-nlog.txt
+logs\internal-nlog.txt
+Program.cs
